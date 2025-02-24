@@ -1,13 +1,16 @@
 package com.huaan9527.mall.webapi.configuration;
 
+import com.huaan9527.mall.webapi.social.jdbc.JhJdbcUsersConnectionRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.env.Environment;
 import org.springframework.security.crypto.encrypt.Encryptors;
 import org.springframework.social.UserIdSource;
 import org.springframework.social.config.annotation.ConnectionFactoryConfigurer;
 import org.springframework.social.config.annotation.SocialConfigurer;
+import org.springframework.social.connect.Connection;
 import org.springframework.social.connect.ConnectionFactoryLocator;
 import org.springframework.social.connect.ConnectionSignUp;
 import org.springframework.social.connect.UsersConnectionRepository;
@@ -46,7 +49,7 @@ public class WechatAutoConfiguration implements SocialConfigurer {
 
     @Override
     public UsersConnectionRepository getUsersConnectionRepository(ConnectionFactoryLocator connectionFactoryLocator) {
-        JdbcUsersConnectionRepository connectionRepository = new JdbcUsersConnectionRepository(dataSource,
+        JhJdbcUsersConnectionRepository connectionRepository = new JhJdbcUsersConnectionRepository(dataSource,
                 connectionFactoryLocator, Encryptors.noOpText());
         connectionRepository.setConnectionSignUp(connectionSignUp);
         return connectionRepository;
