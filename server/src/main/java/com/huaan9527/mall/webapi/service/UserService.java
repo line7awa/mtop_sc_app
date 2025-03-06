@@ -21,6 +21,7 @@ import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.core.ValueOperations;
 import org.springframework.mail.MailSender;
 import org.springframework.mail.SimpleMailMessage;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.social.connect.Connection;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -65,6 +66,7 @@ public class UserService {
     }
 
     public UserVo getCurrentUser() {
+
         Long currentUserId = SecurityUtils.getCurrentUserId();
         User user = userRepository.getById(currentUserId);
         UserVo userVo = new UserVo();

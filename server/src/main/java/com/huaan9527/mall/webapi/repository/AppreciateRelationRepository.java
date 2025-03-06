@@ -15,5 +15,5 @@ public interface AppreciateRelationRepository extends MybatisRepository<Apprecia
 
     List<AppreciateRelation> findByUserIdAndDataType(Long userId, DataType dataType);
 
-    AppreciateRelation findByUserIdAndDataIdAndDataType(Long userId, Long dataId, String dataType);
+    AppreciateRelation findByUserIdAndDataIdAndDataType(Long userId, String dataId, String dataType);
 }

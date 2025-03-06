@@ -12,6 +12,7 @@ public class SecurityUtils {
      * @return
      */
     public static Long getCurrentUserId() {
+
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         if (authentication == null || authentication instanceof AnonymousAuthenticationToken) {
             return -1L;

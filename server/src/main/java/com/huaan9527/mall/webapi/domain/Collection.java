@@ -16,7 +16,7 @@ import javax.persistence.Table;
 @NoArgsConstructor
 public class Collection extends AbstractDomain<Long> {
     private Long userId;
-    private Long dataId; //淘宝商品id  或者  穿搭id
+    private String dataId; //淘宝商品id  或者  穿搭id
     private String dataType = DataType.Product.name();
 
 }

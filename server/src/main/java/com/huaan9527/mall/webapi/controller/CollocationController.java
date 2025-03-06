@@ -57,13 +57,13 @@ public class CollocationController {
     }
 
     @GetMapping("/mi/collocation/detail")
-    public ResponseEntity detail(Long collocationId) {
+    public ResponseEntity detail(String collocationId) {
         CollocationDetailVo detail = collocationService.detail(collocationId);
         return ResponseEntity.success(detail);
     }
 
     @GetMapping("/mi/collocation/simple_detail")
-    public ResponseEntity simpleDetail(Long collocationId) {
+    public ResponseEntity simpleDetail(String collocationId) {
         CollocationVo collocationVo = collocationService.simpleDetail(collocationId);
         return ResponseEntity.success(collocationVo);
     }

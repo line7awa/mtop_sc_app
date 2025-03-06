@@ -20,9 +20,4 @@ public class CollocationServiceTest extends BaseTest {
         System.out.println(list);
     }
 
-    @Test
-    public void detail() {
-        CollocationDetailVo detail = collocationService.detail(1L);
-        System.out.println(detail);
-    }
 }

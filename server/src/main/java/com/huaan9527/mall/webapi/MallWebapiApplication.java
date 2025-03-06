@@ -3,6 +3,7 @@ package com.huaan9527.mall.webapi;
 import com.huaan9527.mall.webapi.configuration.properties.DaTaoKeProperties;
 import com.huaan9527.mall.webapi.configuration.properties.TaoBaoKeProperties;
 import com.huaan9527.mall.webapi.configuration.properties.TencentSmsProperties;
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;

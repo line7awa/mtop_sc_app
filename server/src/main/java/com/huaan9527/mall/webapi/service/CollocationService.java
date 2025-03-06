@@ -84,7 +84,7 @@ public class CollocationService {
     /**
      * @return
      */
-    public CollocationDetailVo detail(Long collocationId) {
+    public CollocationDetailVo detail(String collocationId) {
         collocationRepository.increaseViewCount(collocationId);
         CollocationDetailVo detail = collocationRepository.findDetailById(collocationId);
         detail.getProducts().forEach(product -> {
@@ -121,7 +121,7 @@ public class CollocationService {
     }
 
     @Transactional
-    public CollocationVo simpleDetail(Long collocationId) {
+    public CollocationVo simpleDetail(String collocationId) {
         collocationRepository.increaseViewCount(collocationId);
         CollocationVo collocationVo = collocationRepository.simpleDetail(collocationId);
         Long userId = SecurityUtils.getCurrentUserId();

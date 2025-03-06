@@ -51,7 +51,7 @@ public class AppreciateRelationService {
         return appreciateRelationRepository.findByUserIdAndDataType(userId, DataType.Collocation);
     }
 
-    public AppreciateRelation findAppreciateCollocation(Long userId, Long collocationId, String dataType) {
+    public AppreciateRelation findAppreciateCollocation(Long userId, String collocationId, String dataType) {
         return appreciateRelationRepository.findByUserIdAndDataIdAndDataType(userId, collocationId, dataType);
     }
 }

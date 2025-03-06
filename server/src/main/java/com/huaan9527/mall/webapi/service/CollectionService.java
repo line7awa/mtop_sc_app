@@ -38,7 +38,7 @@ public class CollectionService {
         }
         Collection collection = new Collection();
         collection.setUserId(currentUserId);
-        collection.setDataId(Long.valueOf(dataId));
+        collection.setDataId(dataId);
         collection.setDataType(dataType);
         collectionRepository.save(collection);
     }
